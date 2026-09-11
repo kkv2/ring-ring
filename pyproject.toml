@@ -3,11 +3,11 @@
 # single uv.lock.
 
 [project]
-name = "moshi-moshi"
+name = "ring-ring"
 version = "0.0.0"
 description = "A miniature AI call center where voice agents answer real phone calls."
 requires-python = ">=3.12"
-dependencies = ["moshi-moshi-api"]
+dependencies = ["ring-ring-api"]
 
 [tool.uv]
 package = false
@@ -16,7 +16,7 @@ package = false
 members = ["apps/*"]
 
 [tool.uv.sources]
-moshi-moshi-api = { workspace = true }
+ring-ring-api = { workspace = true }
 
 [dependency-groups]
 dev = [
@@ -52,7 +52,7 @@ select = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["moshi_moshi_api"]
+known-first-party = ["ring_ring_api"]
 
 [tool.ruff.format]
 docstring-code-format = true

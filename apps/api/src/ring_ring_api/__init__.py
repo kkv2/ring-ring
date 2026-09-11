@@ -1,4 +1,4 @@
-"""moshi-moshi backend."""
+"""ring-ring backend."""
 
 __all__ = ["__version__"]
 

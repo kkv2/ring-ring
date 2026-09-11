@@ -1,4 +1,4 @@
-# moshi-moshi Constitution
+# ring-ring Constitution
 
 The rules every spec, plan and implementation in this repository is held to. It restates
 what [`CLAUDE.md`](../../CLAUDE.md), [`README.md`](../../README.md) and
@@ -8,7 +8,7 @@ what [`CLAUDE.md`](../../CLAUDE.md), [`README.md`](../../README.md) and
 
 ### I. No human writes a line of the code (NON-NEGOTIABLE)
 
-Specs, review and direction are human; the implementation is not. moshi-moshi is an
+Specs, review and direction are human; the implementation is not. ring-ring is an
 experiment in AI-DLC as much as it is a voice bot, so this rule is the point of the
 project rather than a convenience. A change a human hand-edited does not belong in a PR.
 

@@ -1,4 +1,4 @@
-/* moshi-moshi design tokens
+/* ring-ring design tokens
  *
  * Source of truth: docs/design/BRAND.md
  * Derived from the hero banner docs/assets/hero-20-ink.svg ("Ink").
@@ -8,80 +8,80 @@
  * that the banner does not cover. Change them freely.
  *
  * Tailwind v4: @import "tokens.css"; then map inside @theme, e.g.
- *   @theme { --color-navy-900: var(--mm-navy-900); }
+ *   @theme { --color-navy-900: var(--rr-navy-900); }
  */
 
 :root {
   /* ---- From the banner: surfaces ---- */
-  --mm-desk-100:   #E4E2DA;  /* page ground, light */
-  --mm-desk-200:   #D6D4C9;  /* hairlines and dividers on desk-100 */
-  --mm-navy-700:   #2E5480;  /* raised navy surface / gradient start */
-  --mm-navy-900:   #16304E;  /* deep navy surface / gradient end */
-  --mm-navy-950:   #0E2136;  /* punched marks, deepest navy */
-  --mm-navy-100:   #C8D7E8;  /* pale tint for secondary labels on navy */
+  --rr-desk-100:   #E4E2DA;  /* page ground, light */
+  --rr-desk-200:   #D6D4C9;  /* hairlines and dividers on desk-100 */
+  --rr-navy-700:   #2E5480;  /* raised navy surface / gradient start */
+  --rr-navy-900:   #16304E;  /* deep navy surface / gradient end */
+  --rr-navy-950:   #0E2136;  /* punched marks, deepest navy */
+  --rr-navy-100:   #C8D7E8;  /* pale tint for secondary labels on navy */
 
   /* ---- From the banner: ink ---- */
-  --mm-paper-100:  #F3EFE6;  /* ivory type on navy */
-  --mm-slate-900:  #1C2430;  /* headings on desk-100 */
-  --mm-slate-600:  #585F68;  /* body text on desk-100 */
-  --mm-slate-400:  #767D86;  /* meta / labels — large or uppercase only, 3.3:1 */
+  --rr-paper-100:  #F3EFE6;  /* ivory type on navy */
+  --rr-slate-900:  #1C2430;  /* headings on desk-100 */
+  --rr-slate-600:  #585F68;  /* body text on desk-100 */
+  --rr-slate-400:  #767D86;  /* meta / labels — large or uppercase only, 3.3:1 */
 
   /* ---- From the banner: accent ---- */
-  --mm-brass-500:  #D2A94E;  /* the single accent. See BRAND.md for where it may sit. */
+  --rr-brass-500:  #D2A94E;  /* the single accent. See BRAND.md for where it may sit. */
 
   /* ---- From the banner: card gradient ---- */
-  --mm-card-gradient: linear-gradient(135deg, var(--mm-navy-700) 0%, var(--mm-navy-900) 100%);
-  --mm-card-shine:    linear-gradient(135deg, rgb(255 255 255 / 0.22) 0%, rgb(255 255 255 / 0) 55%);
+  --rr-card-gradient: linear-gradient(135deg, var(--rr-navy-700) 0%, var(--rr-navy-900) 100%);
+  --rr-card-shine:    linear-gradient(135deg, rgb(255 255 255 / 0.22) 0%, rgb(255 255 255 / 0) 55%);
 
   /* ---- Extensions: status (NOT from the banner) ---- */
-  --mm-status-live:     #3E7D6A;  /* call connected */
-  --mm-status-ringing:  var(--mm-brass-500);
-  --mm-status-ended:    var(--mm-slate-400);
-  --mm-status-dropped:  #B4503C;  /* failed / escalated */
+  --rr-status-live:     #3E7D6A;  /* call connected */
+  --rr-status-ringing:  var(--rr-brass-500);
+  --rr-status-ended:    var(--rr-slate-400);
+  --rr-status-dropped:  #B4503C;  /* failed / escalated */
 
   /* ---- Extensions: roles ---- */
-  --mm-bg:          var(--mm-desk-100);
-  --mm-bg-raised:   #FAF8F2;
-  --mm-border:      var(--mm-desk-200);
-  --mm-text:        var(--mm-slate-900);
-  --mm-text-muted:  var(--mm-slate-600);
-  --mm-text-meta:   var(--mm-slate-400);
-  --mm-accent:      var(--mm-navy-700);
-  --mm-on-accent:   var(--mm-paper-100);
+  --rr-bg:          var(--rr-desk-100);
+  --rr-bg-raised:   #FAF8F2;
+  --rr-border:      var(--rr-desk-200);
+  --rr-text:        var(--rr-slate-900);
+  --rr-text-muted:  var(--rr-slate-600);
+  --rr-text-meta:   var(--rr-slate-400);
+  --rr-accent:      var(--rr-navy-700);
+  --rr-on-accent:   var(--rr-paper-100);
 
   /* ---- Type ---- */
-  --mm-font-sans: "Helvetica Neue", Helvetica, "Hiragino Sans", system-ui, sans-serif;
-  --mm-font-mono: Menlo, ui-monospace, "SF Mono", monospace;
-  --mm-tracking-wordmark: -0.035em;  /* the moshi-moshi wordmark, always */
-  --mm-tracking-label:     0.20em;   /* uppercase mono labels */
-  --mm-tracking-meta:      0.10em;   /* small mono meta rows */
+  --rr-font-sans: "Helvetica Neue", Helvetica, "Hiragino Sans", system-ui, sans-serif;
+  --rr-font-mono: Menlo, ui-monospace, "SF Mono", monospace;
+  --rr-tracking-wordmark: -0.035em;  /* the ring-ring wordmark, always */
+  --rr-tracking-label:     0.20em;   /* uppercase mono labels */
+  --rr-tracking-meta:      0.10em;   /* small mono meta rows */
 
   /* ---- Geometry ---- */
-  --mm-radius-card: 16px;  /* the telecard corner; reuse for large panels */
-  --mm-radius:      6px;   /* controls, inputs, chips */
-  --mm-card-ratio:  1.585; /* the telecard, 85.6 x 54 mm */
+  --rr-radius-card: 16px;  /* the telecard corner; reuse for large panels */
+  --rr-radius:      6px;   /* controls, inputs, chips */
+  --rr-card-ratio:  1.585; /* the telecard, 85.6 x 54 mm */
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --mm-bg:         #101A28;
-    --mm-bg-raised:  var(--mm-navy-900);
-    --mm-border:     #24384F;
-    --mm-text:       var(--mm-paper-100);
-    --mm-text-muted: #A8B4C2;
-    --mm-text-meta:  #76849A;
-    --mm-accent:     var(--mm-brass-500);
-    --mm-on-accent:  var(--mm-navy-950);
+    --rr-bg:         #101A28;
+    --rr-bg-raised:  var(--rr-navy-900);
+    --rr-border:     #24384F;
+    --rr-text:       var(--rr-paper-100);
+    --rr-text-muted: #A8B4C2;
+    --rr-text-meta:  #76849A;
+    --rr-accent:     var(--rr-brass-500);
+    --rr-on-accent:  var(--rr-navy-950);
   }
 }
 
 :root[data-theme="dark"] {
-  --mm-bg:         #101A28;
-  --mm-bg-raised:  var(--mm-navy-900);
-  --mm-border:     #24384F;
-  --mm-text:       var(--mm-paper-100);
-  --mm-text-muted: #A8B4C2;
-  --mm-text-meta:  #76849A;
-  --mm-accent:     var(--mm-brass-500);
-  --mm-on-accent:  var(--mm-navy-950);
+  --rr-bg:         #101A28;
+  --rr-bg-raised:  var(--rr-navy-900);
+  --rr-border:     #24384F;
+  --rr-text:       var(--rr-paper-100);
+  --rr-text-muted: #A8B4C2;
+  --rr-text-meta:  #76849A;
+  --rr-accent:     var(--rr-brass-500);
+  --rr-on-accent:  var(--rr-navy-950);
 }

@@ -9,7 +9,7 @@ from typing import Literal
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from moshi_moshi_api import __version__
+from ring_ring_api import __version__
 
 
 class Health(BaseModel):
@@ -22,7 +22,7 @@ class Health(BaseModel):
 def create_app() -> FastAPI:
     """Build the application. Tests call this directly; uvicorn uses `app` below."""
     app = FastAPI(
-        title="moshi-moshi API",
+        title="ring-ring API",
         version=__version__,
         summary="Hello? AI speaking.",
     )
