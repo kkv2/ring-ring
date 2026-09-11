@@ -99,9 +99,13 @@ issues, PRs, commit messages — is written in **English**. The *product* is Jap
 [`docs/design/tokens.css`](docs/design/tokens.css). Build UI from those tokens. Do not
 introduce a new colour without changing `BRAND.md` in the same PR.
 
-**Honesty about state.** The repository is at Milestone 0 — nothing is wired up yet. Do not
-write documentation that describes behaviour which does not exist. If a document must mention
-a future capability, say which milestone it arrives at. See [`ROADMAP.md`](ROADMAP.md).
+**Honesty about state.** Do not write documentation that describes behaviour which does not
+exist. If a document must mention a future capability, say which milestone it arrives at.
+Where the repository stands is recorded in one place — the **Status** line on each milestone
+in [`ROADMAP.md`](ROADMAP.md), mirrored by the README's badge and roadmap table. The pull
+request that meets a milestone's *Done when* flips those markers itself; see
+[Recording progress](ROADMAP.md#recording-progress) for the four edits that involves. Never
+mark a milestone complete without the evidence in the same PR.
 
 **Scope.** Do the issue. If something adjacent is broken, open another issue rather than
 widening the PR.

@@ -22,9 +22,10 @@ Issues go on the project board; pull requests do not — the pair is one piece o
 ### III. Honesty about state
 
 Documentation describes what exists. A capability that has not been built is named with
-the milestone it arrives at, never in the present tense. The README's status badge and the
-roadmap are part of the contract: if a milestone's Done-when is not met, the milestone is
-not done.
+the milestone it arrives at, never in the present tense. Progress is recorded by the Status
+markers defined in [Recording progress](../../ROADMAP.md#recording-progress), flipped by the
+same pull request that earns them: if a milestone's Done-when is not met, the milestone is
+not done, and no marker says otherwise.
 
 ### IV. Ship the smallest thing that works
 

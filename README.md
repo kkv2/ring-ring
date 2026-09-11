@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img alt="status: milestone 0" src="https://img.shields.io/badge/status-milestone%200-D2A94E">
+  <img alt="status: milestone 1" src="https://img.shields.io/badge/status-milestone%201-D2A94E">
   <img alt="backend: FastAPI" src="https://img.shields.io/badge/backend-FastAPI-2E5480">
   <img alt="frontend: React" src="https://img.shields.io/badge/frontend-React-2E5480">
   <img alt="development: AI-DLC" src="https://img.shields.io/badge/development-AI--DLC-16304E">
@@ -30,10 +30,10 @@ That is the whole idea — a call center, shrunk down to something one person ca
 > equivalent of "hello?" when you pick up the receiver. This project starts where every
 > phone call starts.
 
-**Status: Milestone 0.** The repository is set up — the backend installs, lints,
-type-checks and tests — but none of the features below is wired up yet. See
-[ROADMAP.md](ROADMAP.md) for what gets built when, and
-[Getting started](#getting-started) for what runs today.
+**Status: Milestone 1.** [M0](ROADMAP.md#milestone-0--set-up-the-repository) is done —
+the repository installs, lints, type-checks and tests. None of the features below is wired
+up yet; the phone call is what is being built now. See [ROADMAP.md](ROADMAP.md) for where
+each milestone stands, and [Getting started](#getting-started) for what runs today.
 
 ## Features
 
@@ -134,22 +134,24 @@ uv run uvicorn moshi_moshi_api.main:app --reload
 ```
 
 The API comes up on <http://127.0.0.1:8000>, where `GET /health` answers and `/docs` shows
-the schema. That is the entire surface at Milestone 0 — Twilio and Gemini Live are wired up
-at [M1](ROADMAP.md#milestone-1--talk-to-an-ai-over-the-phone).
+the schema. That is the entire surface today — Twilio and Gemini Live are wired up at
+[M1](ROADMAP.md#milestone-1--talk-to-an-ai-over-the-phone).
 
 ## Roadmap
 
-| | Milestone | Outcome |
-|---|---|---|
-| **M0** | [Development environment](ROADMAP.md#milestone-0--set-up-the-repository) | The repo is ready to build in |
-| **M1** | [Talk to an AI over the phone](ROADMAP.md#milestone-1--talk-to-an-ai-over-the-phone) | **It's a phone call!** |
-| **M2** | [Manage call sessions](ROADMAP.md#milestone-2--manage-call-sessions) | It keeps records |
-| **M3** | [Let the AI call the backend](ROADMAP.md#milestone-3--let-the-ai-call-the-backend) | It does real work |
-| **M4** | [Answer from internal knowledge](ROADMAP.md#milestone-4--answer-from-internal-knowledge-rag) | It looks things up |
-| **M5** | [Become a miniature call center](ROADMAP.md#milestone-5--become-a-miniature-call-center) | It's a call center |
-| **M6** | [Become a multi-tenant service](ROADMAP.md#milestone-6--become-a-multi-tenant-service) | It's a service |
+| | | Milestone | Outcome |
+|---|---|---|---|
+| ✅ | **M0** | [Development environment](ROADMAP.md#milestone-0--set-up-the-repository) | The repo is ready to build in |
+| ▶ | **M1** | [Talk to an AI over the phone](ROADMAP.md#milestone-1--talk-to-an-ai-over-the-phone) | **It's a phone call!** |
+| ☐ | **M2** | [Manage call sessions](ROADMAP.md#milestone-2--manage-call-sessions) | It keeps records |
+| ☐ | **M3** | [Let the AI call the backend](ROADMAP.md#milestone-3--let-the-ai-call-the-backend) | It does real work |
+| ☐ | **M4** | [Answer from internal knowledge](ROADMAP.md#milestone-4--answer-from-internal-knowledge-rag) | It looks things up |
+| ☐ | **M5** | [Become a miniature call center](ROADMAP.md#milestone-5--become-a-miniature-call-center) | It's a call center |
+| ☐ | **M6** | [Become a multi-tenant service](ROADMAP.md#milestone-6--become-a-multi-tenant-service) | It's a service |
 
-Full detail in [ROADMAP.md](ROADMAP.md).
+✅ complete · ▶ current · ☐ planned — the same markers the milestones carry in
+[ROADMAP.md](ROADMAP.md), which explains how and when they are flipped. Full detail there
+too.
 
 ## Development
 
