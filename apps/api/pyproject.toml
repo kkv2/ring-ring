@@ -1,0 +1,16 @@
+[project]
+name = "moshi-moshi-api"
+version = "0.0.0"
+description = "moshi-moshi backend — Twilio webhooks, the media bridge and agent tools."
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.120",
+    "uvicorn[standard]>=0.38",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/moshi_moshi_api"]

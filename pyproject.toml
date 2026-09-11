@@ -1,0 +1,80 @@
+# Workspace root. It ships no code of its own — every Python package lives under
+# apps/ and is listed as a workspace member, so the whole monorepo resolves to a
+# single uv.lock.
+
+[project]
+name = "moshi-moshi"
+version = "0.0.0"
+description = "A miniature AI call center where voice agents answer real phone calls."
+requires-python = ">=3.12"
+dependencies = ["moshi-moshi-api"]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["apps/*"]
+
+[tool.uv.sources]
+moshi-moshi-api = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.12.0",
+    "mypy>=1.18",
+    "pytest>=8.4",
+    "ruff>=0.14",
+]
+
+# ---------------------------------------------------------------------------
+# Ruff — lint and format, shared by every package in the workspace.
+# ---------------------------------------------------------------------------
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = [".specify", ".claude"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # import sorting
+    "B",    # bugbear
+    "C4",   # comprehensions
+    "UP",   # pyupgrade
+    "SIM",  # simplify
+    "ANN",  # missing annotations
+    "ASYNC",# async pitfalls
+    "PT",   # pytest style
+    "RUF",  # ruff-specific
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["moshi_moshi_api"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+# ---------------------------------------------------------------------------
+# mypy — strict everywhere. `uv run mypy` checks the files listed here.
+# ---------------------------------------------------------------------------
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["apps"]
+mypy_path = ["apps/api/src"]
+explicit_package_bases = true
+namespace_packages = true
+warn_unreachable = true
+pretty = true
+
+# ---------------------------------------------------------------------------
+# pytest
+# ---------------------------------------------------------------------------
+
+[tool.pytest.ini_options]
+testpaths = ["apps/api/tests"]
+addopts = "-q --strict-markers --strict-config"

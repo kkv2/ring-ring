@@ -1,0 +1,53 @@
+# ---- Python -------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments and uv caches. uv.lock IS committed — a fresh clone
+# must resolve to the exact same versions.
+.venv/
+venv/
+.uv/
+
+# ---- Tooling caches -----------------------------------------------------
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# ---- Node / frontend (apps/web, arrives with a later milestone) ---------
+node_modules/
+.vite/
+apps/web/dist/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---- Secrets and local configuration ------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+credentials.json
+service-account*.json
+
+# ---- Agent tooling ------------------------------------------------------
+# .claude/skills holds the Spec Kit workflow and is committed; per-machine
+# settings and local agent state are not.
+.claude/settings.local.json
+.claude/local/
+
+# ---- Editors and OS -----------------------------------------------------
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store

@@ -11,9 +11,38 @@ Each milestone is a visible step up:
 > **M1 it's a phone call! → M2 it keeps records → M3 it does real work → M4 it looks
 > things up → M5 it's a call center → M6 it's a service.**
 
+## Recording progress
+
+Every milestone below carries a **Status** line. It is one of three things:
+
+| Marker | Meaning |
+|---|---|
+| ✅ **Complete** | The milestone's *Done when* is met, dated, and linked to the pull request that met it |
+| ▶ **Current** | What the repository is working toward now. Says nothing about what exists yet |
+| ☐ **Planned** | Not started |
+
+Exactly one milestone is **Current** at a time, and it is the one the README's status badge
+names.
+
+**The pull request that meets a milestone's *Done when* flips its Status in the same pull
+request** — the claim and the evidence land together, and no later tidy-up is owed. Flipping
+one means four edits, all of them in that PR:
+
+1. this file — the finished milestone becomes ✅ with today's date and its PR link, and the
+   next one becomes ▶
+2. [`README.md`](README.md) — the marker in the Roadmap table
+3. [`README.md`](README.md) — the status badge at the top, renamed to the new **Current**
+   milestone
+4. [`README.md`](README.md) — any Features row the milestone delivers, ☐ → ☑
+
+A milestone whose *Done when* is not demonstrably met stays ▶. Partial credit is not a
+marker.
+
 ---
 
 ## Milestone 0 — Set up the repository
+
+**Status:** ✅ Complete — 2026-09-11 ([#4](https://github.com/kkv2/moshi-moshi/pull/4))
 
 Build the foundation of `kkv2/moshi-moshi`.
 
@@ -30,6 +59,8 @@ Build the foundation of `kkv2/moshi-moshi`.
 ---
 
 ## Milestone 1 — Talk to an AI over the phone
+
+**Status:** ▶ Current
 
 **The first big one.**
 
@@ -57,6 +88,8 @@ That's the entire success criterion.
 
 ## Milestone 2 — Manage call sessions
 
+**Status:** ☐ Planned
+
 Turn "an AI that answers the phone" into something that behaves like a system.
 
 **Scope**
@@ -74,6 +107,8 @@ the schema drift ahead of a migration.
 
 ## Milestone 3 — Let the AI call the backend
 
+**Status:** ☐ Planned
+
 Give Gemini tools.
 
 Ask "what are your business hours?" and the model doesn't bluff — it calls something like
@@ -87,6 +122,8 @@ model's imagination.
 ---
 
 ## Milestone 4 — Answer from internal knowledge (RAG)
+
+**Status:** ☐ Planned
 
 Prepare a knowledge base — FAQs, the manual of a fictional company — and let the agent
 search it.
@@ -102,6 +139,8 @@ over the phone.
 ---
 
 ## Milestone 5 — Become a miniature call center
+
+**Status:** ☐ Planned
 
 The actual point of moshi-moshi.
 
@@ -128,6 +167,8 @@ afterwards — end to end.
 ---
 
 ## Milestone 6 — Become a multi-tenant service
+
+**Status:** ☐ Planned
 
 Turn one call center into many.
 

@@ -99,30 +99,81 @@ issues, PRs, commit messages — is written in **English**. The *product* is Jap
 [`docs/design/tokens.css`](docs/design/tokens.css). Build UI from those tokens. Do not
 introduce a new colour without changing `BRAND.md` in the same PR.
 
-**Honesty about state.** The repository is at Milestone 0 — nothing is wired up yet. Do not
-write documentation that describes behaviour which does not exist. If a document must mention
-a future capability, say which milestone it arrives at. See [`ROADMAP.md`](ROADMAP.md).
+**Honesty about state.** Do not write documentation that describes behaviour which does not
+exist. If a document must mention a future capability, say which milestone it arrives at.
+Where the repository stands is recorded in one place — the **Status** line on each milestone
+in [`ROADMAP.md`](ROADMAP.md), mirrored by the README's badge and roadmap table. The pull
+request that meets a milestone's *Done when* flips those markers itself; see
+[Recording progress](ROADMAP.md#recording-progress) for the four edits that involves. Never
+mark a milestone complete without the evidence in the same PR.
 
 **Scope.** Do the issue. If something adjacent is broken, open another issue rather than
 widening the PR.
 
 ## Layout
 
-Planned monorepo shape — directories appear as milestones land.
+Monorepo. Directories marked *planned* appear as milestones land.
 
 ```
 apps/api/     Python · FastAPI — Twilio webhooks, media bridge, agent tools
-apps/web/     TypeScript · React — tenant and operator consoles
-packages/     shared types and contracts
-specs/        GitHub Spec Kit specs and plans
+apps/web/     TypeScript · React — tenant and operator consoles      (planned)
+packages/     shared types and contracts                             (planned)
+specs/        GitHub Spec Kit specs and plans                        (planned)
+.specify/     Spec Kit templates, scripts and the constitution
+.claude/      Spec Kit workflow skills
 docs/design/  BRAND.md, tokens.css, dial.svg
 docs/assets/  hero banner
 ```
 
+`apps/api` is a src layout: the package is `apps/api/src/moshi_moshi_api/`, its tests are
+`apps/api/tests/`.
+
 ## Commands
 
-Nothing is set up yet; the toolchain arrives with
-[Milestone 0](ROADMAP.md#milestone-0--set-up-the-repository). When it does, it will be
-`uv`, `ruff`, `mypy` and `pytest` for the backend, `alembic` for schema changes once
-[Milestone 2](ROADMAP.md#milestone-2--manage-call-sessions) lands, and Vite for the frontend. Update this
-section in the PR that introduces them.
+The backend is a [uv](https://docs.astral.sh/uv/) workspace rooted at the repository. Every
+command runs from the root; `uv` finds the right environment.
+
+```bash
+uv sync                      # install the workspace (creates .venv)
+uv run ruff format .         # format
+uv run ruff format --check . # check formatting, as CI does
+uv run ruff check .          # lint  (--fix to autofix)
+uv run mypy                  # type-check, strict; files are set in pyproject.toml
+uv run pytest                # test
+uv run uvicorn moshi_moshi_api.main:app --reload   # run the API on :8000
+```
+
+All four checks run in CI on every push and pull request
+([`.github/workflows/ci.yml`](.github/workflows/ci.yml)); a red PR does not merge.
+
+Configuration lives in the root [`pyproject.toml`](pyproject.toml) — Ruff, mypy and pytest
+are configured once for the whole workspace. `uv.lock` is committed: a fresh clone resolves
+to the same versions, and CI installs with `uv sync --locked`.
+
+Adding a dependency:
+
+```bash
+uv add --package moshi-moshi-api <pkg>   # runtime dependency of the API
+uv add --dev <pkg>                       # tooling, workspace-wide
+```
+
+Still to come: `alembic` for schema changes once
+[Milestone 2](ROADMAP.md#milestone-2--manage-call-sessions) lands, and Vite for the frontend.
+Update this section in the PR that introduces them.
+
+## Spec Kit
+
+[GitHub Spec Kit](https://github.com/github/spec-kit) is initialised in this repository.
+The workflow skills live in `.claude/skills/` and the templates and scripts in `.specify/`.
+
+```
+/speckit-constitution   project principles — .specify/memory/constitution.md
+/speckit-specify        write a spec for a feature      → specs/<feature>/
+/speckit-clarify        de-risk an ambiguous spec       (optional, before plan)
+/speckit-plan           turn the spec into a plan
+/speckit-tasks          break the plan into tasks
+/speckit-implement      build it
+```
+
+The [constitution](.specify/memory/constitution.md) restates the rules on this page in the
+form Spec Kit reads; the two are amended together.
