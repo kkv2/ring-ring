@@ -64,7 +64,9 @@ Turn "an AI that answers the phone" into something that behaves like a system.
 - Call lifecycle: start, end, call ID, duration, disconnect reason
 - Logs good enough to reconstruct what happened during any single call
 
-**Persistence:** introduce PostgreSQL at the point where it's actually needed, not before.
+**Persistence:** introduce PostgreSQL at the point where it's actually needed, not before —
+reached through SQLAlchemy, with Alembic owning the schema from the first migration. Never let
+the schema drift ahead of a migration.
 
 **Done when:** any past call can be traced end to end from its records.
 

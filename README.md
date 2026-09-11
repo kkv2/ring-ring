@@ -68,7 +68,7 @@ infrastructure until it's actually needed.
 
 | Layer | Choice |
 |---|---|
-| Backend | Python 3.12+ · [FastAPI](https://fastapi.tiangolo.com/) |
+| Backend | Python 3.12+ · [FastAPI](https://fastapi.tiangolo.com/) · [SQLAlchemy](https://www.sqlalchemy.org/) + [Alembic](https://alembic.sqlalchemy.org/) for persistence and migrations (from [M2](ROADMAP.md#milestone-2--manage-call-sessions)) |
 | Frontend | TypeScript · React · [Vite](https://vite.dev/) · Tailwind CSS |
 | Voice AI | [Gemini Live API](https://ai.google.dev/gemini-api/docs/live) (Gemini 2.5, GA) — speech-to-speech |
 | Telephony | [Twilio](https://www.twilio.com/docs/voice) Programmable Voice + Media Streams |

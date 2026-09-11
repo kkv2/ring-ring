@@ -110,5 +110,6 @@ docs/assets/  hero banner
 
 Nothing is set up yet; the toolchain arrives with
 [Milestone 0](ROADMAP.md#milestone-0--set-up-the-repository). When it does, it will be
-`uv`, `ruff`, `mypy` and `pytest` for the backend, and Vite for the frontend. Update this
+`uv`, `ruff`, `mypy` and `pytest` for the backend, `alembic` for schema changes once
+[Milestone 2](ROADMAP.md#milestone-2--manage-call-sessions) lands, and Vite for the frontend. Update this
 section in the PR that introduces them.
