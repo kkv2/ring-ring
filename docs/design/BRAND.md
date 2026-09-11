@@ -15,7 +15,7 @@ Machine-readable values live in [`tokens.css`](./tokens.css). This file explains
 
 ## Palette
 
-Ten values, all taken directly from the banner. There are no others.
+Eleven values, all taken directly from the banner. There are no others.
 
 ### Surfaces
 
@@ -26,6 +26,7 @@ Ten values, all taken directly from the banner. There are no others.
 | `--mm-navy-700` | `#2E5480` | Raised navy surface; the card gradient's light end. |
 | `--mm-navy-900` | `#16304E` | Deep navy surface; the card gradient's dark end. |
 | `--mm-navy-950` | `#0E2136` | Punched (used) marks. The deepest value in the system. |
+| `--mm-navy-100` | `#C8D7E8` | Pale tint for secondary labels on navy. Used once, at 90%, for the card's top line. |
 
 ### Ink
 
@@ -152,22 +153,27 @@ for headings.
 
 ---
 
-## Rejected directions
+## The banner
 
-Kept so the same ground is not re-covered. The frames themselves have been deleted — only
-`hero-20-ink` remains in [`docs/assets/`](../assets/) — so this table is the whole record.
+[`docs/assets/hero-20-ink.svg`](../assets/hero-20-ink.svg) — `1280 × 480`, rendered to PNG at 2×
+(`2560 × 960`) for the README. The SVG is the source; regenerate the PNG from it rather than
+editing the raster.
 
-| | Direction | Why not |
-|---|---|---|
-| A | Dark terminal, mint on near-black | Reads as an infra tool, not a call center |
-| B | Gradient waveform, indigo to violet | Product-launch register; too polished for a side project |
-| C | Speech bubbles, cream | Brightest of the set; sits badly above a dark README |
-| D | Editorial minimal | Says the least |
-| E1–E4 | Switchboard, patch bay, bakelite, one line | Strong atmosphere, but hides the AI half of the premise |
-| F | Live call transcript | Depicts tool calling that does not exist until Milestone 3 |
-| G | 「もしもし」 at full size | Strongest identity of all, but Japanese-first in the hero |
-| H | Architecture diagram | Duplicates the README's own mermaid diagram; goes stale |
-| I1–I4 | Telecard: on a desk, flat lay, full bleed, vintage | Vermilion; superseded by the navy issue |
-| I1a–I1d | Roman-only telecard variants | Composition kept, palette not chosen |
+The composition, should it ever need rebuilding or resizing:
 
-The winning frame is `hero-20-ink` — `I1e`, the navy issue.
+| | |
+|---|---|
+| Ground | `desk-100`, with `desk-200` hairlines every `8px` at 50% opacity |
+| Card | `560 × 352` at `x 96, y 90`, tilted `-2.2°` about `380, 268` |
+| Punch row | ten marks at `x 132, y 124`; three used |
+| Rule | `y 176`, `brass-500` at 45%, from `x 132` to `x 620` |
+| Dial | `r 74` centred `556, 352`, `brass-500` at 24%, placed clear of the wordmark |
+| Wordmark | `56px`, weight 700, `-0.035em`, `paper-100`, baseline `y 300` |
+| Card labels | `11px` `navy-100` at the top, `12.5px` `brass-500` under the wordmark — both mono, wide tracked |
+| Right column | from `x 740` — tagline `38px` `slate-900`, description `18px` `slate-600`, rule, then a `12.5px` mono stack row in `slate-400` |
+
+Three things carry the identity and must survive any redraw: **the punch row** (without it the
+object is a credit card), **the embossed dial**, and **the wordmark in lowercase at tight
+tracking**. Everything else is arrangement.
+
+The banner contains no Japanese — see the section above.

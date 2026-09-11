@@ -18,6 +18,7 @@
   --mm-navy-700:   #2E5480;  /* raised navy surface / gradient start */
   --mm-navy-900:   #16304E;  /* deep navy surface / gradient end */
   --mm-navy-950:   #0E2136;  /* punched marks, deepest navy */
+  --mm-navy-100:   #C8D7E8;  /* pale tint for secondary labels on navy */
 
   /* ---- From the banner: ink ---- */
   --mm-paper-100:  #F3EFE6;  /* ivory type on navy */

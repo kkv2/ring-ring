@@ -58,12 +58,13 @@ For example `feature/12-model-selector`, `chore/3-tech-stack-setup`,
 One PR per issue, into `main`. Every PR gets:
 
 - **Assignee:** the same git operator as the issue — `kkv2`.
-- **Project:** the same project board, `7`.
 - **A closing keyword** in the body — `Closes #<n>` — so merging resolves the issue.
+
+**Do not add pull requests to the project board.** Issues and PRs move as a pair, so a PR on
+the board is the same work tracked twice. The issue is the card; the PR is how it gets done.
 
 ```bash
 gh pr create --base main --title "<title>" --body "…Closes #<n>" --assignee kkv2
-gh project item-add 7 --owner kkv2 --url <pr-url>
 ```
 
 ### Commits
