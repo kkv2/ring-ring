@@ -30,8 +30,10 @@ That is the whole idea — a call center, shrunk down to something one person ca
 > equivalent of "hello?" when you pick up the receiver. This project starts where every
 > phone call starts.
 
-**Status: Milestone 0.** The repository is being set up. Nothing below is wired up yet —
-see [ROADMAP.md](ROADMAP.md) for what gets built when.
+**Status: Milestone 0.** The repository is set up — the backend installs, lints,
+type-checks and tests — but none of the features below is wired up yet. See
+[ROADMAP.md](ROADMAP.md) for what gets built when, and
+[Getting started](#getting-started) for what runs today.
 
 ## Features
 
@@ -82,18 +84,20 @@ Infrastructure and cloud are deliberately deferred. Everything runs locally firs
 
 ## Repository layout
 
-A monorepo. Planned shape — directories appear as milestones land:
+A monorepo. Directories marked *planned* appear as milestones land:
 
 ```
 moshi-moshi/
 ├── apps/
 │   ├── api/          # Python / FastAPI — Twilio webhooks, media bridge, agent tools
-│   └── web/          # TypeScript / React — tenant and operator consoles
-├── packages/         # shared types and contracts
-├── specs/            # GitHub Spec Kit specs and plans
+│   └── web/          # TypeScript / React — tenant and operator consoles   (planned)
+├── packages/         # shared types and contracts                          (planned)
+├── specs/            # GitHub Spec Kit specs and plans                     (planned)
+├── .specify/         # Spec Kit templates, scripts, constitution
 ├── docs/
 │   ├── design/       # palette, dial mark, type — see BRAND.md
 │   └── assets/       # hero banners
+├── pyproject.toml    # uv workspace — Ruff, mypy and pytest configured once
 ├── CLAUDE.md         # conventions for AI contributors
 └── ROADMAP.md
 ```
@@ -108,8 +112,30 @@ rather than from fresh choices.
 
 ## Getting started
 
-Not yet. There is nothing to run until [Milestone 1](ROADMAP.md#milestone-1--talk-to-an-ai-over-the-phone)
-lands. Setup instructions arrive with it.
+There is no phone call to make until [Milestone 1](ROADMAP.md#milestone-1--talk-to-an-ai-over-the-phone)
+lands, but the backend runs and the checks pass today.
+
+Requires [uv](https://docs.astral.sh/uv/getting-started/installation/); it fetches Python
+3.12 itself.
+
+```bash
+git clone https://github.com/kkv2/moshi-moshi.git
+cd moshi-moshi
+uv sync
+```
+
+Then, from the repository root:
+
+```bash
+uv run ruff check .   # lint
+uv run mypy           # type-check (strict)
+uv run pytest         # test
+uv run uvicorn moshi_moshi_api.main:app --reload
+```
+
+The API comes up on <http://127.0.0.1:8000>, where `GET /health` answers and `/docs` shows
+the schema. That is the entire surface at Milestone 0 — Twilio and Gemini Live are wired up
+at [M1](ROADMAP.md#milestone-1--talk-to-an-ai-over-the-phone).
 
 ## Roadmap
 
