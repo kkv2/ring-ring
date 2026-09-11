@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" fill="currentColor" role="img" aria-label="moshi-moshi dial mark">
+  <circle cx="64.0" cy="64.0" r="56.0" fill="none" stroke="currentColor" stroke-width="4"/>
+  <circle cx="64.0" cy="64.0" r="11.76"/>
+  <circle cx="52.23" cy="27.78" r="8.12"/>
+  <circle cx="71.92" cy="26.75" r="8.12"/>
+  <circle cx="89.48" cy="35.70" r="8.12"/>
+  <circle cx="100.22" cy="52.23" r="8.12"/>
+  <circle cx="101.25" cy="71.92" r="8.12"/>
+  <circle cx="92.30" cy="89.48" r="8.12"/>
+  <circle cx="75.77" cy="100.22" r="8.12"/>
+  <circle cx="56.08" cy="101.25" r="8.12"/>
+  <circle cx="38.52" cy="92.30" r="8.12"/>
+  <circle cx="27.78" cy="75.77" r="8.12"/>
+</svg>
