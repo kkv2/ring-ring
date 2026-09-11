@@ -25,11 +25,13 @@ Never commit directly to `main`.
 
 Open an issue before starting work. Every issue gets:
 
-- **Assignee:** the person driving the work — the git operator. Today that is `kkv2`.
-- **Project:** [moshi-moshi kanban](https://github.com/users/kkv2/projects/7/views/1) (project `7`, owner `kkv2`).
+- **Assignee:** `@me` — the GitHub account Claude Code is authenticated as, which is the
+  person who asked for the work. Never hardcode a username; see *Assignment* below.
+- **Project:** [moshi-moshi kanban](https://github.com/users/kkv2/projects/7/views/1)
+  (project `7`, owner `kkv2`). The board belongs to the repository, so this one *is* fixed.
 
 ```bash
-gh issue create --title "<title>" --body "<body>" --assignee kkv2
+gh issue create --title "<title>" --body "<body>" --assignee "@me"
 gh project item-add 7 --owner kkv2 --url <issue-url>
 ```
 
@@ -57,15 +59,26 @@ For example `feature/12-model-selector`, `chore/3-tech-stack-setup`,
 
 One PR per issue, into `main`. Every PR gets:
 
-- **Assignee:** the same git operator as the issue — `kkv2`.
+- **Assignee:** `@me`, the same account as the issue.
 - **A closing keyword** in the body — `Closes #<n>` — so merging resolves the issue.
 
 **Do not add pull requests to the project board.** Issues and PRs move as a pair, so a PR on
 the board is the same work tracked twice. The issue is the card; the PR is how it gets done.
 
 ```bash
-gh pr create --base main --title "<title>" --body "…Closes #<n>" --assignee kkv2
+gh pr create --base main --title "<title>" --body "…Closes #<n>" --assignee "@me"
 ```
+
+### Assignment
+
+Issues and PRs are assigned to **whoever ran Claude Code**, resolved at the time of the call —
+not to a name written down here. `gh` expands `@me` to the authenticated account, so
+`--assignee "@me"` is the whole mechanism.
+
+Today that account is `kkv2`, and while this stays a solo project it always will be. That is a
+fact about who is working, not a rule, and the convention must not encode it. If a second
+person ever contributes, their work should land under their own name without anyone editing
+this file.
 
 ### Commits
 
