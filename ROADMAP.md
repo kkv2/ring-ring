@@ -42,9 +42,9 @@ marker.
 
 ## Milestone 0 — Set up the repository
 
-**Status:** ✅ Complete — 2026-09-11 ([#4](https://github.com/kkv2/moshi-moshi/pull/4))
+**Status:** ✅ Complete — 2026-09-11 ([#4](https://github.com/kkv2/ring-ring/pull/4))
 
-Build the foundation of `kkv2/moshi-moshi`.
+Build the foundation of `kkv2/ring-ring`.
 
 **Scope**
 
@@ -142,7 +142,7 @@ over the phone.
 
 **Status:** ☐ Planned
 
-The actual point of moshi-moshi.
+The actual point of ring-ring.
 
 **Scope**
 
@@ -196,7 +196,7 @@ case. The likely shape is that a tenant applies, and the operator buys and wires
 hand from the operator console. Treat fully automatic provisioning as a stretch goal, not a
 requirement — the milestone does not depend on it.
 
-**On scope.** This is the *architecture* of a SaaS, not a business. moshi-moshi stays a hobby
+**On scope.** This is the *architecture* of a SaaS, not a business. ring-ring stays a hobby
 project and is not being taken to market; see the README's out-of-scope note.
 
 **Done when:** two tenants run side by side on their own numbers, with their own knowledge and

@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Conventions for AI contributors to `kkv2/moshi-moshi`.
+Conventions for AI contributors to `kkv2/ring-ring`.
 
 ## The prime rule
 
@@ -27,7 +27,7 @@ Open an issue before starting work. Every issue gets:
 
 - **Assignee:** `@me` — the GitHub account Claude Code is authenticated as, which is the
   person who asked for the work. Never hardcode a username; see *Assignment* below.
-- **Project:** [moshi-moshi kanban](https://github.com/users/kkv2/projects/7/views/1)
+- **Project:** [ring-ring kanban](https://github.com/users/kkv2/projects/7/views/1)
   (project `7`, owner `kkv2`). The board belongs to the repository, so this one *is* fixed.
 
 ```bash
@@ -125,7 +125,7 @@ docs/design/  BRAND.md, tokens.css, dial.svg
 docs/assets/  hero banner
 ```
 
-`apps/api` is a src layout: the package is `apps/api/src/moshi_moshi_api/`, its tests are
+`apps/api` is a src layout: the package is `apps/api/src/ring_ring_api/`, its tests are
 `apps/api/tests/`.
 
 ## Commands
@@ -140,7 +140,7 @@ uv run ruff format --check . # check formatting, as CI does
 uv run ruff check .          # lint  (--fix to autofix)
 uv run mypy                  # type-check, strict; files are set in pyproject.toml
 uv run pytest                # test
-uv run uvicorn moshi_moshi_api.main:app --reload   # run the API on :8000
+uv run uvicorn ring_ring_api.main:app --reload   # run the API on :8000
 ```
 
 All four checks run in CI on every push and pull request
@@ -153,7 +153,7 @@ to the same versions, and CI installs with `uv sync --locked`.
 Adding a dependency:
 
 ```bash
-uv add --package moshi-moshi-api <pkg>   # runtime dependency of the API
+uv add --package ring-ring-api <pkg>   # runtime dependency of the API
 uv add --dev <pkg>                       # tooling, workspace-wide
 ```
 

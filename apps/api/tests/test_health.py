@@ -2,8 +2,8 @@
 
 from fastapi.testclient import TestClient
 
-from moshi_moshi_api import __version__
-from moshi_moshi_api.main import create_app
+from ring_ring_api import __version__
+from ring_ring_api.main import create_app
 
 
 def test_health_reports_ok() -> None:

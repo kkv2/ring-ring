@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/assets/hero-20-ink.png" alt="moshi-moshi — Hello? AI speaking." width="100%">
+  <img src="docs/assets/hero-20-ink.png" alt="ring-ring — Hello? AI speaking." width="100%">
 </p>
 
-<h1 align="center">moshi-moshi</h1>
+<h1 align="center">ring-ring</h1>
 
 <p align="center">
   <strong>Hello? AI speaking.</strong><br>
@@ -20,15 +20,15 @@
 
 ## Overview
 
-**moshi-moshi** replaces the first line of a phone support desk with AI.
+**ring-ring** replaces the first line of a phone support desk with AI.
 
 Someone calls a real phone number, an AI voice agent picks up, understands what they
 need, looks up the answer, and either resolves the call or hands it over to a human.
 That is the whole idea — a call center, shrunk down to something one person can build.
 
-> **On the name.** In Japan a phone call opens with *"moshi moshi"* (もしもし) — the
-> equivalent of "hello?" when you pick up the receiver. This project starts where every
-> phone call starts.
+> **On the name.** *Ring ring* is the noise a phone makes before anyone has said anything —
+> プルルルル, the way it is written in Japanese. This project starts where every phone call
+> starts: the ring, and then someone picking up. Here the someone is an AI.
 
 **Status: Milestone 1.** [M0](ROADMAP.md#milestone-0--set-up-the-repository) is done —
 the repository installs, lints, type-checks and tests. None of the features below is wired
@@ -87,7 +87,7 @@ Infrastructure and cloud are deliberately deferred. Everything runs locally firs
 A monorepo. Directories marked *planned* appear as milestones land:
 
 ```
-moshi-moshi/
+ring-ring/
 ├── apps/
 │   ├── api/          # Python / FastAPI — Twilio webhooks, media bridge, agent tools
 │   └── web/          # TypeScript / React — tenant and operator consoles   (planned)
@@ -119,8 +119,8 @@ Requires [uv](https://docs.astral.sh/uv/getting-started/installation/); it fetch
 3.12 itself.
 
 ```bash
-git clone https://github.com/kkv2/moshi-moshi.git
-cd moshi-moshi
+git clone https://github.com/kkv2/ring-ring.git
+cd ring-ring
 uv sync
 ```
 
@@ -130,7 +130,7 @@ Then, from the repository root:
 uv run ruff check .   # lint
 uv run mypy           # type-check (strict)
 uv run pytest         # test
-uv run uvicorn moshi_moshi_api.main:app --reload
+uv run uvicorn ring_ring_api.main:app --reload
 ```
 
 The API comes up on <http://127.0.0.1:8000>, where `GET /health` answers and `/docs` shows

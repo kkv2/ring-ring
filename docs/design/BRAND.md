@@ -21,21 +21,21 @@ Eleven values, all taken directly from the banner. There are no others.
 
 | Token | Hex | Role |
 |---|---|---|
-| `--mm-desk-100` | `#E4E2DA` | Page ground, light theme. The desk the card sits on. |
-| `--mm-desk-200` | `#D6D4C9` | Hairlines and dividers on `desk-100`. |
-| `--mm-navy-700` | `#2E5480` | Raised navy surface; the card gradient's light end. |
-| `--mm-navy-900` | `#16304E` | Deep navy surface; the card gradient's dark end. |
-| `--mm-navy-950` | `#0E2136` | Punched (used) marks. The deepest value in the system. |
-| `--mm-navy-100` | `#C8D7E8` | Pale tint for secondary labels on navy. Used once, at 90%, for the card's top line. |
+| `--rr-desk-100` | `#E4E2DA` | Page ground, light theme. The desk the card sits on. |
+| `--rr-desk-200` | `#D6D4C9` | Hairlines and dividers on `desk-100`. |
+| `--rr-navy-700` | `#2E5480` | Raised navy surface; the card gradient's light end. |
+| `--rr-navy-900` | `#16304E` | Deep navy surface; the card gradient's dark end. |
+| `--rr-navy-950` | `#0E2136` | Punched (used) marks. The deepest value in the system. |
+| `--rr-navy-100` | `#C8D7E8` | Pale tint for secondary labels on navy. Used once, at 90%, for the card's top line. |
 
 ### Ink
 
 | Token | Hex | Role | Contrast |
 |---|---|---|---|
-| `--mm-paper-100` | `#F3EFE6` | Type printed on navy. | 11.7:1 on `navy-900` |
-| `--mm-slate-900` | `#1C2430` | Headings on `desk-100`. | 12.0:1 |
-| `--mm-slate-600` | `#585F68` | Body text on `desk-100`. | 5.0:1 |
-| `--mm-slate-400` | `#767D86` | Meta and labels on `desk-100`. | **3.2:1** |
+| `--rr-paper-100` | `#F3EFE6` | Type printed on navy. | 11.7:1 on `navy-900` |
+| `--rr-slate-900` | `#1C2430` | Headings on `desk-100`. | 12.0:1 |
+| `--rr-slate-600` | `#585F68` | Body text on `desk-100`. | 5.0:1 |
+| `--rr-slate-400` | `#767D86` | Meta and labels on `desk-100`. | **3.2:1** |
 
 `slate-400` reaches only 3.2:1 and does not meet 4.5:1. In the banner it only ever sets 12–13px uppercase mono at wide
 tracking, which is the one place it is legible enough. Use it for the same thing or not at all —
@@ -45,7 +45,7 @@ never for body copy.
 
 | Token | Hex | Role |
 |---|---|---|
-| `--mm-brass-500` | `#D2A94E` | The single accent. |
+| `--rr-brass-500` | `#D2A94E` | The single accent. |
 
 **Brass is a dark-ground colour.** It reaches 6.1:1 on `navy-900` and only **1.7:1** on `desk-100`.
 On light surfaces it may be used as a graphic fill — a rule, a mark, a punch, a chart series — but
@@ -61,10 +61,10 @@ are chosen to sit at the same low saturation as the rest.
 
 | Token | Hex | Meaning |
 |---|---|---|
-| `--mm-status-live` | `#3E7D6A` | Call connected |
-| `--mm-status-ringing` | `#D2A94E` | Ringing — reuses brass |
-| `--mm-status-ended` | `#767D86` | Ended normally |
-| `--mm-status-dropped` | `#B4503C` | Dropped, failed, escalated |
+| `--rr-status-live` | `#3E7D6A` | Call connected |
+| `--rr-status-ringing` | `#D2A94E` | Ringing — reuses brass |
+| `--rr-status-ended` | `#767D86` | Ended normally |
+| `--rr-status-dropped` | `#B4503C` | Dropped, failed, escalated |
 
 All four land between 3.2:1 and 3.9:1 on `desk-100` — they are fills, dots and stripes, not text.
 Always pair them with a written state.
@@ -129,10 +129,10 @@ first entry in each stack and nothing else changes.
 
 Tracking carries as much of the identity as the faces do:
 
-- **Wordmark** — `-0.035em`, weight 700, always lowercase, always hyphenated: `moshi-moshi`.
+- **Wordmark** — `-0.035em`, weight 700, always lowercase, always hyphenated: `ring-ring`.
   Never capitalised, never spaced out, never set in mono.
 - **Uppercase mono labels** — `0.20em`. This is the card's voice: `AI VOICE FRONT DESK`,
-  `105 UNITS`, `MOSHI MOSHI TELEPHONE CARD`.
+  `105 UNITS`, `RING RING TELEPHONE CARD`.
 - **Small mono meta rows** — `0.10em`.
 
 Mono is for labels, identifiers, timers, phone numbers and units — anything that is data. Sans is for
@@ -142,13 +142,13 @@ anything that is language.
 
 ## Japanese
 
-The chosen banner has none, deliberately. 「もしもし」 was carrying the reference by itself in earlier
-drafts; with it gone, the card object does that work and the README's opening paragraph explains the
-name in words.
+The chosen banner has none, deliberately. Earlier drafts set the name across the card in kana and let
+that word carry the reference by itself; with it gone, the card object does that work and the
+README's opening paragraph explains the name in words.
 
 In the product this reverses: **the service speaks Japanese only** (see the README's out-of-scope
-note), so the console will be Japanese-first. When Japanese appears, set it in `Hiragino Sans`; the
-banner set 「もしもし」 at `600` weight with `6–10px` letter-spacing, which is a good starting point
+note), so the console will be Japanese-first. When Japanese appears, set it in `Hiragino Sans`; those
+drafts set kana at `600` weight with `6–10px` letter-spacing, which is a good starting point
 for headings.
 
 ---
